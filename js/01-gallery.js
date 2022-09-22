@@ -32,11 +32,19 @@ refGallery.addEventListener("click", (e) => {
   `,
     {
       onShow: (instance) => {
-        window.addEventListener("keydown", (evt) => {
+        function escapeHandler(evt) {
+          console.log("hi");
           if (evt.code === "Escape") {
             instance.close();
+            deleteHandler();
           }
-        });
+        }
+
+        function deleteHandler() {
+          window.removeEventListener("keydown", escapeHandler);
+        }
+
+        window.addEventListener("keydown", escapeHandler);
       },
     }
   );

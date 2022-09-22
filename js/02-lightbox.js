@@ -6,9 +6,9 @@ const refGallery = document.querySelector(".gallery");
 galleryItems.forEach((item) => {
   refGallery.insertAdjacentHTML(
     "beforeend",
-    `
+    `<li>
 <a class="gallery__item" href="${item.original}"><img class="gallery__image" src="${item.preview}" alt="${item.description}"></a>
-    `
+    </li>`
   );
 });
 
